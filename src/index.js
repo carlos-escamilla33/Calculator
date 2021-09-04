@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Bill from "./Bill.js"
 
-const App = (props) => {
-  return <div className="app">
-    <div className="profile">
-      <h1>Testing</h1>
-    </div>
-  </div>
+const App = () => {
+  return(
+    <>
+      <Bill />
+    </>
+  )
 }
 
 ReactDOM.render(
