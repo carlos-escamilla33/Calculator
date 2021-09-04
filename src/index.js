@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Bill from "./Bill.js"
+import {
+  Bill
+} from "./components"
 
 const App = () => {
   return(
