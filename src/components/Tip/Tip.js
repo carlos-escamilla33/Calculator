@@ -1,23 +1,35 @@
 import React from "react";
+import { spacing } from "@material-ui/system";
+import { Button } from "@material-ui/core"
 import "./Tip.css"
 
 const Tip = () => {
     return (
-        <div className="btnContainer">
-            <div>
-                <button>5%</button>
+        <div>
+            <div className="btn">
+                <Button
+                    className="btn"
+                    variant="contained"
+                    color="primary">5%</Button>
             </div>
-            <div>
-                <button>10%</button>
+            <div className="btn">
+                <Button
+                    variant="contained"
+                    color="primary">10%</Button>
             </div>
-            <div>
-                <button>15%</button>
+            <div className="btn">
+                <Button
+                    variant="contained"
+                    color="primary">15%</Button>
             </div>
-            <div>
-                <button>25%</button>
+            <div className="btn"> 
+                <Button
+                    variant="contained"
+                    color="primary">25%</Button>
             </div>
-            <div>
-                <button className="btnLast customBtn">Custom</button>
+            <div className="btn">
+                <Button
+                    variant="outlined">Custom</Button>
             </div>
         </div>
     )
