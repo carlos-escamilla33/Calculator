@@ -2,7 +2,15 @@
 
 .btn {
     display: inline;
-    margin-right: 5px;
+    margin: 5px;
+}
+
+.contain {
+    margin: 15px;
+}
+
+.select {
+    margin-left: 30px;
 }
 
 

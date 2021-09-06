@@ -1,11 +1,11 @@
 import React from "react";
-import { spacing } from "@material-ui/system";
+import { Typography } from "@material-ui/core";
 import { Button } from "@material-ui/core"
 import "./Tip.css"
 
 const Tip = () => {
     return (
-        <div>
+        <div className="contain">
             <div className="btn">
                 <Button
                     className="btn"

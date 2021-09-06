@@ -1,11 +1,13 @@
 import React from "react";
+import { TextField } from "@material-ui/core"
 
 const PeopleTotal = () => {
     return (
         <div>
-            <p>Number of People</p>
-            <input
-                placeholder="Number of People"
+            <TextField
+                variant="outlined"
+                label="Number of People"
+                size="small"
             />
         </div>
     )
