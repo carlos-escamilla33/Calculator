@@ -1,36 +1,56 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 import { Button } from "@material-ui/core"
 import "./Tip.css"
 
-const Tip = () => {
+const Tip = (props) => {
+    const { bill } = props;
+
+    const tipPercent = [
+        {
+            id: 1,
+            percentage: 5
+        },
+        {
+            id: 2,
+            percentage: 10
+        },
+        {
+            id: 3,
+            percentage: 15
+        },
+        {
+            id: 4,
+            percentage: 25
+        }
+    ];
+
     return (
         <div className="contain">
-            <div className="btn">
-                <Button
-                    className="btn"
-                    variant="contained"
-                    color="primary">5%</Button>
-            </div>
-            <div className="btn">
-                <Button
-                    variant="contained"
-                    color="primary">10%</Button>
-            </div>
-            <div className="btn">
-                <Button
-                    variant="contained"
-                    color="primary">15%</Button>
-            </div>
-            <div className="btn"> 
-                <Button
-                    variant="contained"
-                    color="primary">25%</Button>
-            </div>
-            <div className="btn">
-                <Button
-                    variant="outlined">Custom</Button>
-            </div>
+
+            {
+                tipPercent.map((percent) => {
+                    return (
+                        <div className="btn" key={percent.id}>
+                            <Button
+                                className="btn"
+                                variant="contained"
+                                color="primary"
+                            >
+                                {`${percent.percentage}%`}
+                            </Button>
+                        </div>
+                    )
+                })
+            }
+            <TextField
+                className="customInput"
+                label="Custom Tip %"
+                id="outlined-size-small"
+                variant="outlined"
+                size="small"
+            >Custom
+            </TextField>
         </div>
     )
 }

@@ -1,34 +1,48 @@
 import React, { useState } from "react";
-import { TextField, Container, Typography } from "@material-ui/core";
-import Tip from "../Tip/Tip.js"
-import PeopleTotal from "../PeopleTotal/PeopleTotal.js"
-import "./Bill.css"
+import { TextField, Typography, Button } from "@material-ui/core";
+import Tip from "../Tip/Tip.js";
+import PeopleTotal from "../PeopleTotal/PeopleTotal.js";
+import "./Bill.css";
 
-const Bill = () => {
-    const [bill, setBill] = useState(0);
+const Bill = (props) => {
+    const { bill, setBill } = props;
 
     const billHandler = (event) => {
+        setBill(Number(event.target.value))
+    }
+
+    // sconst buttonHandler = (event) => {
+    //     event.preventDefault();
+
+    // }
+
+    const submitHandler = (event) => {
         event.preventDefault();
-        setBill(event.target.value)
+        console.log(bill);
+        setBill("")
     }
 
     return (
-        <Container className="container">
-            <form>
-                <Typography>Bill</Typography>
+        <form onSubmit={submitHandler} className="container">
                 <TextField
                     id="outlined-size-small"
                     variant="outlined"
-                    label="$ Amount $"
+                    label="$ Enter Amount $"
                     size="small"
+                    type="number"
                     value={bill}
                     onChange={billHandler}
                 />
-                <Typography>Select Tip %</Typography>
-                <Tip />
+                <Tip bill={bill}/>
                 <PeopleTotal />
-            </form>
-        </Container>
+                <div className="submit">
+                    <Button
+                    type="submit"
+                    variant="outlined" 
+                    color="primary"
+                    >Submit</Button>
+                </div>
+        </form>
     )
 }
 

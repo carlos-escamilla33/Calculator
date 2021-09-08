@@ -11,3 +11,7 @@ body {
     border-radius: 15px;
     background-color: white;
 }
+
+.submit {
+    margin: 10px;
+}

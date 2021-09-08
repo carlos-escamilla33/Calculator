@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import {
   Bill,
@@ -6,9 +6,12 @@ import {
 } from "./components"
 
 const App = () => {
-  return(
+  const [bill, setBill] = useState("");
+  const [tipTotal, setTipTotal] = useState()
+
+  return (
     <>
-      <Bill />
+      <Bill bill={bill} setBill={setBill} />
       <Totals />
     </>
   )
