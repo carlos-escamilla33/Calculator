@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-  Bill
+  Bill,
+  Totals
 } from "./components"
 
 const App = () => {
   return(
     <>
       <Bill />
+      <Totals />
     </>
   )
 }

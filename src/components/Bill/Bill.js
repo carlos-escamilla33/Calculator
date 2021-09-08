@@ -5,6 +5,13 @@ import PeopleTotal from "../PeopleTotal/PeopleTotal.js"
 import "./Bill.css"
 
 const Bill = () => {
+    const [bill, setBill] = useState(0);
+
+    const billHandler = (event) => {
+        event.preventDefault();
+        setBill(event.target.value)
+    }
+
     return (
         <Container className="container">
             <form>
@@ -14,6 +21,8 @@ const Bill = () => {
                     variant="outlined"
                     label="$ Amount $"
                     size="small"
+                    value={bill}
+                    onChange={billHandler}
                 />
                 <Typography>Select Tip %</Typography>
                 <Tip />
