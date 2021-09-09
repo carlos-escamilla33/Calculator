@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Typography, Button } from "@material-ui/core";
+import { TextField, Container, Button } from "@material-ui/core";
 import Tip from "../Tip/Tip.js";
 import PeopleTotal from "../PeopleTotal/PeopleTotal.js";
 import "./Bill.css";
@@ -23,7 +23,8 @@ const Bill = (props) => {
     }
 
     return (
-        <form onSubmit={submitHandler} className="container">
+        <Container className="container">
+            <form onSubmit={submitHandler}>
                 <TextField
                     id="outlined-size-small"
                     variant="outlined"
@@ -33,16 +34,17 @@ const Bill = (props) => {
                     value={bill}
                     onChange={billHandler}
                 />
-                <Tip bill={bill}/>
+                <Tip bill={bill} />
                 <PeopleTotal />
                 <div className="submit">
                     <Button
-                    type="submit"
-                    variant="outlined" 
-                    color="primary"
+                        type="submit"
+                        variant="outlined"
+                        color="primary"
                     >Submit</Button>
                 </div>
-        </form>
+            </form>
+        </Container>
     )
 }
 
